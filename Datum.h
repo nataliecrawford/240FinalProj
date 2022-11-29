@@ -5,11 +5,21 @@
 
 class Datum
 {
-    private:
-    /* data */
     public:
-        Datum(/* args */);
+        Datum();
+        Datum(float value = 0.0);
+        Datum(const Datum &rhs);
         ~Datum();
+
+        float getData() const;
+        void setData(float value);
+
+        Datum * getNext() const;
+        void setNext(Datum &link);
+
+    private:
+        float data;
+        Datum *next;
 };
 
 #endif //DATUM.H
