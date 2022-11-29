@@ -4,17 +4,17 @@
 
 using namespace std;
 
-Datum::Datum() : data(0.0), next(NULL) {
+Datum::Datum() {
     setData(0.0);
     setNext(NULL);
 }
 
-Datum::Datum(float value) : data(value), next(NULL) {
+Datum::Datum(float value) {
     setData(value);
     setNext(NULL);
 }
 
-Datum::Datum(const Datum &rhs) : data(rhs.getData()), next(rhs.getNext()) {
+Datum::Datum(const Datum &rhs) {
     setData(rhs.getData());
     setNext(rhs.getNext());
 }

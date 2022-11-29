@@ -1,10 +1,10 @@
 #ifndef DATUM_H
 #define DATUM_H
 
+#include <cstdlib>
 #include <iostream>
 
-class Datum
-{
+class Datum {
     public:
         Datum();
         Datum(float value = 0.0);
