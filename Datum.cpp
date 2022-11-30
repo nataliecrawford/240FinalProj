@@ -5,11 +5,11 @@
 using namespace std;
 
 Datum::Datum() {
-    setData(0.0);
+    setData(0);
     setNext(NULL);
 }
 
-Datum::Datum(float value) {
+Datum::Datum(int value) {
     setData(value);
     setNext(NULL);
 }
@@ -23,11 +23,11 @@ Datum::~Datum() {
     delete [] next;
 }
 
-float Datum::getData() const {
+int Datum::getData() const {
     return data;
 }
 
-void Datum::setData(float value) {
+void Datum::setData(int value) {
     data = value;
 }
 
@@ -35,6 +35,7 @@ Datum * Datum::getNext() const {
     return next;
 }
 
-void Datum::setNext(Datum &link) {
-    next = link
+void Datum::setNext(Datum &datum) {
+    Datum *temp(&datum);
+    next = temp;
 }

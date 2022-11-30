@@ -7,14 +7,14 @@ LList::LList(){
 
 }
 
-LList::LList(int[] anArray, int size){
+LList::LList(int[], int size) {
 
 }
 
-LList::LList(const LList &){
+LList::LList(const LList &list) {
 
 }
 
-LList::~LList(){
+LList::~LList() {
     
 }

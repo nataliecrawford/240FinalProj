@@ -7,18 +7,18 @@
 class Datum {
     public:
         Datum();
-        Datum(float value = 0.0);
+        Datum(int value = 0);
         Datum(const Datum &rhs);
         ~Datum();
 
-        float getData() const;
-        void setData(float value);
+        int getData() const;
+        void setData(int value);
 
         Datum * getNext() const;
         void setNext(Datum &link);
 
     private:
-        float data;
+        int data;
         Datum *next;
 };
 
