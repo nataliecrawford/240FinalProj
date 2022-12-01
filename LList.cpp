@@ -25,11 +25,17 @@ LList::LList(int arr[], int size) {
 }
 
 LList::LList(const LList &list) {
-
+    head = current = tail = list.head;
+    length = list.size();
+    for(int i = 1; i < length; i++) {
+        Datum *temp = current->getNext();
+        current->setNext(*temp);
+        current = tail = temp; 
+    }
 }
 
 LList::~LList() {
-    
+    //TODO
 }
 
 const LList LList::operator+(const LList &rhs) const {
