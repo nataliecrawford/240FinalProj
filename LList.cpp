@@ -74,7 +74,12 @@ int LList::remove(int index) {
     if(index <length){
         index = 0;
     }
-
+    for(int i = 0; i < index; i++) {
+        current = current->getNext();
+    } //current is now equal to index - 1
+    Datum *temp = current;
+    current->setNext(*temp->getNext());
+    return temp->getData();
 
 
 }
