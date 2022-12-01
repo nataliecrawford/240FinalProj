@@ -18,7 +18,7 @@ class LList {
     public:
         LList();
         LList(int arr[], int size);
-        LList(const LList &list);
+        LList(const LList &rhs);
         ~LList();
 
         const LList operator+(const LList &rhs) const;

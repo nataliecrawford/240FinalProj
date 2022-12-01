@@ -24,9 +24,9 @@ LList::LList(int arr[], int size) {
     }
 }
 
-LList::LList(const LList &list) {
-    head = current = tail = list.head;
-    length = list.size();
+LList::LList(const LList &rhs) {
+    head = current = tail = rhs.head;
+    length = rhs.size();
     for(int i = 1; i < length; i++) {
         Datum *temp = current->getNext();
         current->setNext(*temp);
@@ -39,11 +39,17 @@ LList::~LList() {
 }
 
 const LList LList::operator+(const LList &rhs) const {
-
+    LList temp(*this);
+    (temp.tail)->setNext(*(rhs.head));
+    temp.tail = rhs.tail;
+    temp.length = size() + rhs.size();
+    return temp;
 }
 
 const LList LList::operator=(const LList &rhs) {
-
+    clear();
+    *this = LList(rhs);
+    return *this;
 }
 
 void LList::insert(int index, int value) {
@@ -58,6 +64,7 @@ void LList::insert(int index, int value) {
     Datum *ins = new Datum(*(current)); //ins and current are pointing to the same thing
     ins->setData(value); //resets ins to the correct value
     current->setNext(*ins); //sets current's next to be ins
+    return;
 }
 
 int LList::remove(int index) {
