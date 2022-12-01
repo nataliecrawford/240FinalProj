@@ -12,7 +12,8 @@ class LList {
     private:
         Datum *head;
         Datum *tail;
-        Datum *temp;
+        Datum *current;
+        int length;
 
     public:
         LList();
