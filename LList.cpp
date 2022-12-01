@@ -1,22 +1,41 @@
-#include "LList.h"
 #include <iostream>
+#include "LList.h"
 
 using namespace std;
 
 LList::LList(){
-
+    head = tail = current = nullptr;
+    length = 0;
 }
 
 LList::LList(int arr[], int size) {
-
+    if(length <= 0) {
+        head = tail = current = nullptr;
+        length = 0;
+    }
+    else {
+        length = size;
+        head = current = tail = new Datum(arr[0]);
+        for(int i = 1; i < length; i++) {
+            Datum *temp = new Datum(arr[i]);
+            current->setNext(*temp);
+            current = tail = temp; 
+        }
+    }
 }
 
 LList::LList(const LList &list) {
-
+    head = current = tail = list.head;
+    length = list.size();
+    for(int i = 1; i < length; i++) {
+        Datum *temp = current->getNext();
+        current->setNext(*temp);
+        current = tail = temp; 
+    }
 }
 
 LList::~LList() {
-    
+    //TODO
 }
 
 const LList LList::operator+(const LList &rhs) const {
