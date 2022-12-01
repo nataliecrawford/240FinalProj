@@ -36,6 +36,5 @@ Datum * Datum::getNext() const {
 }
 
 void Datum::setNext(Datum &datum) {
-    Datum *temp(&datum);
-    next = temp;
+    next = datum.getNext();
 }
