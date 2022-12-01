@@ -1,7 +1,6 @@
 #ifndef DATUM_H
 #define DATUM_H
 
-#include <cstdlib>
 #include <iostream>
 
 class Datum {
