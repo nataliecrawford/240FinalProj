@@ -7,6 +7,7 @@
 class LList {
 
     friend ostream & operator<<(ostream &lhs, const LList &rhs);
+    friend istream & operator>>(istream &lhs, const LList &rhs);
 
     private:
         Datum *first;
@@ -36,7 +37,6 @@ class LList {
 
         int operator[](int index) const;
         int & operator[](int index);
-
 
 };
 
