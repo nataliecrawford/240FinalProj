@@ -7,7 +7,7 @@ LList::LList(){
 
 }
 
-LList::LList(int[] arr, int size) {
+LList::LList(int arr[], int size) {
 
 }
 
