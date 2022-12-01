@@ -108,7 +108,6 @@ int main() {
     cout << "list7.contains(0): " << list7.contains(0) << endl;
     cout << endl;
 
-
     cout << "******** Testing isEmpty ********" << endl;
     cout << "list9.isEmpty(): " << list9.isEmpty() << endl;
     cout << "list7.isEmpty(): " << list7.isEmpty() << endl;

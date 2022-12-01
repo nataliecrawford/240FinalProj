@@ -130,3 +130,17 @@ void LList::clear() {
 bool LList::operator==(const LList &rhs) const {
 
 }
+
+ostream & operator<<(ostream &lhs, const LList &rhs) {
+    for(int i = 0; i < rhs.size(); i++) {
+        lhs << rhs[i] << " ";
+    }
+    return lhs;
+}
+
+istream & operator>>(istream &lhs, LList &rhs) {
+    for(int i = 0; i < rhs.size(); i++) {
+        lhs >> rhs[i];
+    }
+    return lhs;
+}
