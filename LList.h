@@ -16,7 +16,7 @@ class LList {
 
     public:
         LList();
-        LList(int[], int size);
+        LList(int[] arr, int size);
         LList(const LList &list);
         ~LList();
 

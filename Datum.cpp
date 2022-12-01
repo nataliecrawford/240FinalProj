@@ -20,7 +20,7 @@ Datum::Datum(const Datum &rhs) {
 }
 
 Datum::~Datum() {
-    delete [] next;
+    //delete [] next;
 }
 
 int Datum::getData() const {
