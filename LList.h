@@ -10,8 +10,8 @@ class LList {
     friend istream & operator>>(istream &lhs, LList &rhs);
 
     private:
-        Datum *first;
-        Datum *last;
+        Datum *head;
+        Datum *tail;
         Datum *temp;
 
     public:
@@ -26,7 +26,10 @@ class LList {
         void insert(int index, int value);
         int remove(int index);
         bool contains(int value) const;
-        int get(int index) const;
+        
+        int operator[](int index) const;
+        int & operator[](int index);
+        
         int indexOf(int value) const;
         
         bool isEmpty() const;
@@ -34,9 +37,6 @@ class LList {
         void clear();
 
         bool operator==(const LList &rhs) const;
-
-        int operator[](int index) const;
-        int & operator[](int index);
 
 };
 
