@@ -35,7 +35,7 @@ LList::LList(const LList &list) {
 }
 
 LList::~LList() {
-    //TODO
+    clear();
 }
 
 const LList LList::operator+(const LList &rhs) const {
