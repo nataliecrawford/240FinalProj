@@ -7,7 +7,7 @@
 class LList {
 
     friend ostream & operator<<(ostream &lhs, const LList &rhs);
-    friend istream & operator>>(istream &lhs, const LList &rhs);
+    friend istream & operator>>(istream &lhs, LList &rhs);
 
     private:
         Datum *first;

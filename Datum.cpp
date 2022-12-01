@@ -6,17 +6,17 @@ using namespace std;
 
 Datum::Datum() {
     setData(0);
-    setNext(NULL);
+    next = NULL;
 }
 
 Datum::Datum(int value) {
     setData(value);
-    setNext(NULL);
+    next = NULL;
 }
 
 Datum::Datum(const Datum &rhs) {
     setData(rhs.getData());
-    setNext(rhs.getNext());
+    next = rhs.getNext();
 }
 
 Datum::~Datum() {
@@ -35,6 +35,6 @@ Datum * Datum::getNext() const {
     return next;
 }
 
-void Datum::setNext(Datum &datum) {
-    next = datum.getNext();
+void Datum::setNext(Datum &rhs) {
+    next = &rhs;
 }

@@ -15,7 +15,7 @@ class Datum {
         void setData(int value);
 
         Datum * getNext() const;
-        void setNext(Datum &link);
+        void setNext(Datum &rhs);
 
     private:
         int data;
