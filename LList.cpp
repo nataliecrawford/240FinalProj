@@ -81,7 +81,6 @@ int LList::remove(int index) {
     current->setNext(*temp->getNext());
     return temp->getData();
 
-
 }
 
 bool LList::contains(int value) const {
