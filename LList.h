@@ -4,6 +4,8 @@
 #include <iostream>
 #include "Datum.h"
 
+using namespace std;
+
 class LList {
 
     friend ostream & operator<<(ostream &lhs, const LList &rhs);
