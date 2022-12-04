@@ -118,8 +118,6 @@ int LList::operator[](int index) const {
 
 }
 
-
-
 int & LList::operator[](int index) {
    if(index<length && index >= 0){
        Datum * temp = head;

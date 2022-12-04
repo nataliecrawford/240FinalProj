@@ -27,6 +27,7 @@ int main() {
     cout << "List5: " << list5 << endl;
     cout << endl;
 
+    /*
     cout << "******** Testing = ********" << endl;
     list4 = list2;
     list0 = list2 = list5;
@@ -154,4 +155,5 @@ int main() {
     cout << "list11[100] = 5: " << list11 << endl;
     list[0] = 5;
     cout << "list[0] = 5: " << list << endl;
+    */
 }

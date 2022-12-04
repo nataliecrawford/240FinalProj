@@ -11,6 +11,7 @@ class Datum {
         ~Datum();
 
         int getData() const;
+        int & getData();
         void setData(int value);
 
         Datum * getNext() const;

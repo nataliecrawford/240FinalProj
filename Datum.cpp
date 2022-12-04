@@ -26,6 +26,10 @@ int Datum::getData() const {
     return data;
 }
 
+int & Datum::getData() {
+    return data;
+}
+
 void Datum::setData(int value) {
     data = value;
 }
