@@ -174,14 +174,16 @@ void LList::clear() {
 
 bool LList::operator==(const LList &rhs) const {
     bool result(true);
-    Datum  * temp = head;
+    
     if(length == rhs.length){
-        
+        Datum  * temp = head; 
         for(int i = 0; i<length; i++){
             if(temp->getData() != rhs[i]){
                 result = false;
             }
+            temp = temp->getNext();
         }
+       
     }
     else{
         result = false;
