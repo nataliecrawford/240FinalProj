@@ -9,7 +9,7 @@ LList::LList(){
 }
 
 LList::LList(int arr[], int size) {
-    if(length <= 0) {
+    if(size <= 0) {
         head = tail = current = nullptr;
         length = 0;
     }
@@ -134,7 +134,7 @@ int & LList::operator[](int index) {
             }
             temp = temp->getNext();
        }
-       
+
     }
 }
 
