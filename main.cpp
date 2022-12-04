@@ -17,6 +17,7 @@ int main() {
     LList list4(list0);
     LList list5(list3);
 
+    /*
     cout << "******** Testing << ********" << endl;
     cout << "List: " << list << endl;
     cout << "List0: " << list0 << endl;
@@ -27,7 +28,6 @@ int main() {
     cout << "List5: " << list5 << endl;
     cout << endl;
 
-    /*
     cout << "******** Testing = ********" << endl;
     list4 = list2;
     list0 = list2 = list5;

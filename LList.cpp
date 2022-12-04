@@ -119,9 +119,9 @@ int LList::operator[](int index) const {
 }
 
 int & LList::operator[](int index) {
-   if(index<length && index >= 0){
-       Datum * temp = head;
-       for (int i = 0; i<length; i++){
+    if(index<length && index >= 0){
+        Datum * temp = head;
+        for (int i = 0; i<length; i++){
             if(i == index){
                 if (temp==nullptr)
                 {
