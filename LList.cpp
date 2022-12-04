@@ -95,11 +95,52 @@ bool LList::contains(int value) const {
 }
 
 int LList::operator[](int index) const {
+    if(index<length && index >= 0){
+       Datum * temp = head;
+       for (int i = 0; i<length; i++){
+            if(i == index){
+                if (temp==nullptr)
+                {
+                    temp->setData(0);
+                }
+                return temp->getData();
+            }
+            temp = temp->getNext();
+       }
+        
+    }
+    else if (index < 0){
+       return head->getData();
+    }
+    else if (index > length){
+        return tail->getData();
+    }
 
 }
 
-int & LList::operator[](int index) {
 
+
+int & LList::operator[](int index) {
+   if(index<length && index >= 0){
+       Datum * temp = head;
+       for (int i = 0; i<length; i++){
+            if(i == index){
+                if (temp==nullptr)
+                {
+                    temp->setData(0);
+                }
+                return temp->getData();
+            }
+            temp = temp->getNext();
+       }
+        
+    }
+    else if (index < 0){
+       return head->getData();
+    }
+    else if (index > length){
+        return tail->getData();
+    }
 }
 
 int LList::indexOf(int value) const {
@@ -132,6 +173,20 @@ void LList::clear() {
 }
 
 bool LList::operator==(const LList &rhs) const {
+    bool result(true);
+    Datum  * temp = head;
+    if(length == rhs.length){
+        
+        for(int i = 0; i<length; i++){
+            if(temp->getData() != rhs[i]){
+                result = false;
+            }
+        }
+    }
+    else{
+        result = false;
+    }
+    return result;
 
 }
 
