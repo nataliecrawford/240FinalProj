@@ -69,6 +69,10 @@ void LList::insert(int index, int value) {
 }
 
 int LList::remove(int index) {
+    if (length <= 0){
+        cout<<"cannot remove anything because nothing is in the linked list, size is <=0...";
+        return -1;
+    }
     current = head;
     if(index >= length){
         index = length-1;
