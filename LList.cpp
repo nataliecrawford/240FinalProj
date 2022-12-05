@@ -101,19 +101,13 @@ int LList::operator[](int index) const {
     else if(index >= length) {
         return tail->getData();
     }
-    else {
-       Datum * temp = head;
-       for (int i = 0; i<length; i++) {
-            if(i == index) {
-                if (temp==nullptr) {
-                    temp->setData(0);
-                }
-                return temp->getData();
-            }
-            temp = temp->getNext();
-       }
-        
+    
+    Datum * temp = new Datum(*(head));
+    for(int i = 0; i < index; i++) {
+        temp->getNext();
     }
+        
+    return temp->getData();
 }
 
 int & LList::operator[](int index) {
@@ -123,29 +117,25 @@ int & LList::operator[](int index) {
     else if(index >= length) {
         return tail->getData();
     }
-    else {
-       Datum * temp = head;
-       for (int i = 0; i<length; i++) {
-            if(i == index) {
-                if (temp==nullptr) {
-                    temp->setData(0);
-                }
-                return temp->getData();
-            }
-            temp = temp->getNext();
-       }
-
+    
+    current = head;
+    for(int i = 0; i < index; i++) {
+        current->getNext();
     }
+    
+    return current->getData();
 }
 
 int LList::indexOf(int value) const {
-    Datum * temp = head;
+    Datum * temp = new Datum(*(head));
     for(int i = 0; i<length; i++){
         if(temp->getData() == value){
+            delete temp;
             return i;
         }
         temp = temp->getNext();
     }
+    delete temp;
     return -1;
 }
 
