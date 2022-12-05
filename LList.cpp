@@ -64,6 +64,7 @@ void LList::insert(int index, int value) {
     Datum *ins = new Datum(*(current)); //ins and current are pointing to the same thing
     ins->setData(value); //resets ins to the correct value
     current->setNext(*ins); //sets current's next to be ins
+    length++;
     return;
 }
 
