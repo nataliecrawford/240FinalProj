@@ -69,34 +69,37 @@ void LList::insert(int index, int value) {
 }
 
 int LList::remove(int index) {
-    //remove first
+    current = head;
+    if(index >= length){
+        index = length-1;
+        for(int i = 0; i < index; i++) {
+            current = current->getNext();
+        }
+        Datum *temp = current->getNext();
+        int data = temp->getData();
+        delete temp;
+        tail = current;
+        length --;
+    }
     if(index <= 0){
         index = 0;
-        current = head;
-        head->setData((current->getNext()->getData()));
-        head->setNext(*(current->getNext()));
+        Datum *temp = head;
+        int data = temp->getData();
+        head = current->getNext();
+        delete temp;
+        length --;
+        return data;
+    }
+    else{
+        for(int i = 0; i < index; i++) {
+            current = current->getNext();
+        } //current is now equal to index - 1
         int data = current->getData();
-        length--;
-        delete current;
-        current = head;
+        current->setNext(*current->getNext());
         return data;
     }
     
-    if(index >= length){
-        index = length - 1;      
-    }
 
-    current = head;
-    for(int i = 1; i < index; i++) {
-        current = current->getNext();
-    } //current is now equal to index - 1
-    Datum *del = new Datum(*(current->getNext()));
-    int data = del->getData();
-    current->setData((del->getNext()->getData()));
-    current->setNext(*(del->getNext()));
-    length--;
-    delete del;
-    return data;
 }
 
 bool LList::contains(int value) const {
