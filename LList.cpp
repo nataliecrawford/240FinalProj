@@ -4,13 +4,13 @@
 using namespace std;
 
 LList::LList(){
-    head = tail = current = nullptr;
+    head = tail = current = NULL;
     length = 0;
 }
 
 LList::LList(int arr[], int size) {
     if(size <= 0) {
-        head = tail = current = nullptr;
+        head = tail = current = NULL;
         length = 0;
     }
     else {
