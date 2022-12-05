@@ -28,7 +28,6 @@ int main() {
     cout << "List5: " << list5 << endl;
     cout << endl;
 
-    /*
     //tested by mia: seg fault
     cout << "******** Testing = ********" << endl;
     list4 = list2;
@@ -38,7 +37,6 @@ int main() {
     // Reset
     list2 = list4;
     list4 = list0 = list;
-    */
 
     //checked by mia: works
     cout << "******** Testing == ********" << endl;
@@ -110,7 +108,6 @@ int main() {
     cout << "list.remove(0): " << list.remove(0) << endl;
     cout << endl;
 
-    /*
     cout << "******** Testing contains ********" << endl;
     cout << "list9.contains(10): " << list9.contains(10) << endl;
     cout << "list9.contains(100): " << list9.contains(100) << endl;
@@ -165,7 +162,6 @@ int main() {
     cout << "list11[100] = 5: " << list11 << endl;
     list[0] = 5;
     cout << "list[0] = 5: " << list << endl;
-    */
     
     list.~LList();
     list1.~LList();
@@ -173,10 +169,10 @@ int main() {
     list3.~LList();
     list4.~LList();
     list5.~LList();
-    //list6.~LList();
-    //list7.~LList();
-    //list8.~LList();
+    list6.~LList();
+    list7.~LList();
+    list8.~LList();
     list9.~LList();
-    //list10.~LList();
-    //list11.~LList();
+    list10.~LList();
+    list11.~LList();
 }
