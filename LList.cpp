@@ -4,13 +4,13 @@
 using namespace std;
 
 LList::LList(){
-    head = tail = current = NULL;
+    head = tail = current = nullptr;
     length = 0;
 }
 
 LList::LList(int arr[], int size) {
     if(size <= 0) {
-        head = tail = current = NULL;
+        head = tail = current = nullptr;
         length = 0;
     }
     else {
@@ -54,8 +54,16 @@ const LList LList::operator+(const LList &rhs) const {
 
 const LList LList::operator=(const LList &rhs) {
     clear();
-    *this = LList(rhs);
-    return *this;
+    LList temp(rhs);
+    length=rhs.size();
+    temp.current = temp.head;
+    head = temp.head;
+    current = temp.current;
+    
+    for(int i = 0; i<length; i++){
+        current->setNext(*(temp.current->getNext()));
+    }
+    return temp;
 }
 
 void LList::insert(int index, int value) {
@@ -193,11 +201,9 @@ int LList::size() const {
 }
 
 void LList::clear() {
-    while(head->getNext() != nullptr){
-        current = head;
-        head = head->getNext();
-        delete current;
-    }
+
+    
+
     length = 0;
 }
 
