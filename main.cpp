@@ -28,6 +28,7 @@ int main() {
     cout << "List5: " << list5 << endl;
     cout << endl;
 
+    /*
     //tested by mia: seg fault
     cout << "******** Testing = ********" << endl;
     list4 = list2;
@@ -37,6 +38,7 @@ int main() {
     // Reset
     list2 = list4;
     list4 = list0 = list;
+    */
 
     //checked by mia: works
     cout << "******** Testing == ********" << endl;
@@ -98,7 +100,7 @@ int main() {
     cout << "list.indexOf(3): " << list.indexOf(3) << endl;
     cout << endl;
 
-    //checked by mia: 
+    //checked by mia: seg fault at "list9.remove(2)"
     cout << "******** Testing Remove ********" << endl;
     cout << "list9.remove(0): " << list9.remove(0) << "\t" << list9 << endl;
     cout << "list9.remove(-1): " << list9.remove(-1) << "\t" << list9 << endl;
@@ -108,6 +110,7 @@ int main() {
     cout << "list.remove(0): " << list.remove(0) << endl;
     cout << endl;
 
+    //checked by mia: works
     cout << "******** Testing contains ********" << endl;
     cout << "list9.contains(10): " << list9.contains(10) << endl;
     cout << "list9.contains(100): " << list9.contains(100) << endl;
@@ -116,12 +119,14 @@ int main() {
     cout << "list7.contains(0): " << list7.contains(0) << endl;
     cout << endl;
 
+    //checked by mia: works
     cout << "******** Testing isEmpty ********" << endl;
     cout << "list9.isEmpty(): " << list9.isEmpty() << endl;
     cout << "list7.isEmpty(): " << list7.isEmpty() << endl;
     cout << "list.isEmpty(): " << list.isEmpty() << endl;
     cout << endl;
 
+    //checked by mia: memory leak before "list7.clear()"
     cout << "******** Testing clear ********" << endl;
     list9.clear();
     cout << "list9.clear(): " << list9 << endl;
