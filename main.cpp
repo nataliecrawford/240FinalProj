@@ -29,7 +29,7 @@ int main() {
     cout << endl;
 
     /*
-    //tested by mia: does not work, seg fault
+    //tested by mia: seg fault
     cout << "******** Testing = ********" << endl;
     list4 = list2;
     list0 = list2 = list5;
@@ -48,7 +48,7 @@ int main() {
     cout << "list0 == list1: " << (list0 == list1) << endl;
     cout << endl;
 
-
+    //tested by mia: works
     cout << "******** Testing insert ********" << endl;
     list0.insert(0, 10);
     cout << "list0.insert(0,10): " << list0 << endl;
@@ -56,10 +56,11 @@ int main() {
     cout << "list3.insert(-1,10): " << list3 << endl;
     list2.insert(1, 10);
     cout << "list2.insert(1,10): " << list2 << endl;
-    list5.insert(10, 10);
-    cout << "list2.insert(10,10): " << list5 << endl;
+    list5.insert(3, 10);
+    cout << "list5.insert(3,10): " << list5 << endl;
     cout << endl;
 
+    //tested by mia: seg fault
     cout << "******** Testing + ********" << endl;
     LList list6 = list1 + list;
     cout << "list1 + list: " << list6 << endl;
@@ -98,9 +99,7 @@ int main() {
     cout << "list7.indexOf(5): " << list7.indexOf(5) << endl;
     cout << "list.indexOf(3): " << list.indexOf(3) << endl;
     cout << endl;
-    */
 
-    LList list9(list3);
     //checked by mia: 
     cout << "******** Testing Remove ********" << endl;
     cout << "list9.remove(0): " << list9.remove(0) << "\t" << list9 << endl;
