@@ -125,7 +125,7 @@ int main() {
     cout << "list.isEmpty(): " << list.isEmpty() << endl;
     cout << endl;
 
-    //not tested
+    //tested by mia: works but with a very large memory leak
     cout << "******** Testing clear ********" << endl;
     list9.clear();
     cout << "list9.clear(): " << list9 << endl;

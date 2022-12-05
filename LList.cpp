@@ -218,7 +218,9 @@ void LList::clear() {
         head = head->getNext();
         delete current;
     }
-    
+
+    //delete head;
+    //delete tail;
     length = 0;
     return;
 }
