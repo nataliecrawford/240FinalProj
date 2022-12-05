@@ -90,7 +90,7 @@ int main() {
     cout << "list45[0]: " << print << endl;
     cout << endl;
 */
-    //checked by mia: segmentation fault after "list7.indexOf(5): -1"
+    //checked by natalie: works"
     cout << "******** Testing indexOf ********" << endl;
     cout << "list9.indexOf(1): " << list9.indexOf(1) << endl;
     cout << "list9.indexOf(10): " << list9.indexOf(10) << endl;
@@ -99,7 +99,7 @@ int main() {
     cout << "list7.indexOf(5): " << list7.indexOf(5) << endl;
     cout << "list.indexOf(3): " << list.indexOf(3) << endl;
     cout << endl;
-
+/*
     //checked by mia: seg fault at "list9.remove(2)"
     cout << "******** Testing Remove ********" << endl;
     cout << "list9.remove(0): " << list9.remove(0) << "\t" << list9 << endl;
@@ -118,7 +118,7 @@ int main() {
     cout << "list7.contains(2): " << list7.contains(2) << endl;
     cout << "list7.contains(0): " << list7.contains(0) << endl;
     cout << endl;
-
+*/
     //checked by mia: works
     cout << "******** Testing isEmpty ********" << endl;
     cout << "list9.isEmpty(): " << list9.isEmpty() << endl;
@@ -140,7 +140,7 @@ int main() {
     cout << "list7.insert(0,10): " << list7 << endl;
     cout << endl;
     
-/*
+
     //not tested
     cout << "******** Testing >> ********" << endl;
     LList list10;
@@ -155,7 +155,7 @@ int main() {
     cin >> list11;
     cout << "4 >> list11: " << list11 << endl;
     cout << endl;
-
+/*
     //not tested
     cout << "******** Testing Left [] Indexing ********" << endl;
     list11[0] = 5;
