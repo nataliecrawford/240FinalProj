@@ -25,10 +25,15 @@ LList::LList(int arr[], int size) {
 }
 
 LList::LList(const LList &rhs) {
-    head = current = tail = rhs.head;
     length = rhs.size();
+    int arr[length];
+    for(int i = 0; i < rhs.size(); i++) {
+        arr[i] = rhs[i];
+    }
+    
+    head = current = tail = new Datum(arr[0]);
     for(int i = 1; i < length; i++) {
-        Datum *temp = current->getNext();
+        Datum *temp = new Datum(arr[i]);
         current->setNext(*temp);
         current = tail = temp; 
     }
@@ -189,7 +194,6 @@ int LList::indexOf(int value) const {
 
 bool LList::isEmpty() const {
     return length == 0;
-
 }
 
 int LList::size() const {
@@ -197,10 +201,18 @@ int LList::size() const {
 }
 
 void LList::clear() {
-
+    if(head == nullptr) { //list is already empty
+        return;
+    }
     
-
+    while(head->getNext() != nullptr) {
+        current = head;
+        head = head->getNext();
+        delete current;
+    }
+    
     length = 0;
+    return;
 }
 
 bool LList::operator==(const LList &rhs) const {

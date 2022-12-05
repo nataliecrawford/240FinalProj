@@ -27,12 +27,13 @@ int main() {
     cout << "List4: " << list4 << endl;
     cout << "List5: " << list5 << endl;
     cout << endl;
-    
-    //tested by mia: works (memory leaks)
+ 
+    //tested by mia: seg fault after printing "list4 = list2: "
     cout << "******** Testing = ********" << endl;
     list4 = list2;
     list0 = list2 = list5;
-    cout << "list4 = list2: " << list4 << endl << "List0 = list2 = list5: " << list0 << endl;
+    cout << "list4 = list2: " << list4 << endl; 
+    cout << "List0 = list2 = list5: " << list0 << endl;
     cout << endl;
     // Reset
     list2 = list4;
@@ -58,6 +59,7 @@ int main() {
     cout << "list5.insert(3,10): " << list5 << endl;
     cout << endl;
 
+/*
     //tested by mia: seg fault
     cout << "******** Testing + ********" << endl;
     LList list6 = list1 + list;
@@ -110,6 +112,8 @@ int main() {
     cout << endl;
 */
 
+    LList list9(list3);
+    LList list7(list3);
     //checked by mia: works
     cout << "******** Testing contains ********" << endl;
     cout << "list9.contains(10): " << list9.contains(10) << endl;
@@ -126,7 +130,7 @@ int main() {
     cout << "list.isEmpty(): " << list.isEmpty() << endl;
     cout << endl;
 
-    //checked by mia: memory leak before "list7.clear()"
+    //not tested
     cout << "******** Testing clear ********" << endl;
     list9.clear();
     cout << "list9.clear(): " << list9 << endl;
