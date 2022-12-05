@@ -32,7 +32,7 @@ int main() {
     cout << "******** Testing = ********" << endl;
     list4 = list2;
     list0 = list2 = list5;
-    cout << "List0 = list2 = list5: " << list0 << "\t" << list2 << endl;
+    cout << "list4 = list2: " << list4 << endl << "List0 = list2 = list5: " << list0 << endl;
     cout << endl;
     // Reset
     list2 = list4;
@@ -69,8 +69,7 @@ int main() {
     LList list9 = list2 + list3 + list1;
     cout << "List2 + list1 + list3: " << list9 << endl;
     cout << endl;
-*/
-    LList list9(list3);
+
     /*
     //checked by mia: segmentation fault after "list9[100]: 2"
     cout << "******** Testing Right [] Indexing ********" << endl;
@@ -109,6 +108,7 @@ int main() {
     cout << "list9.remove(list9.size()): " << list9.remove(list9.size()) << "\t" << list9 << endl;
     cout << "list.remove(0): " << list.remove(0) << endl;
     cout << endl;
+    */
 
     //checked by mia: works
     cout << "******** Testing contains ********" << endl;
