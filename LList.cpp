@@ -68,18 +68,18 @@ void LList::insert(int index, int value) {
 }
 
 int LList::remove(int index) {
-    if(index > length){
+    if(index >= length){
         index = length-1;
     }
-    if(index <length){
+    if(index < 0){
         index = 0;
     }
     for(int i = 0; i < index; i++) {
         current = current->getNext();
     } //current is now equal to index - 1
-    Datum *temp = current;
-    current->setNext(*temp->getNext());
-    return temp->getData();
+    int data = current->getData();
+    current->setNext(*current->getNext());
+    return data;
 
 }
 
@@ -104,7 +104,7 @@ int LList::operator[](int index) const {
     
     Datum * temp = new Datum(*(head));
     for(int i = 0; i < index; i++) {
-        temp->getNext();
+        temp = temp->getNext();
     }
         
     return temp->getData();
@@ -120,7 +120,7 @@ int & LList::operator[](int index) {
     
     current = head;
     for(int i = 0; i < index; i++) {
-        current->getNext();
+        current = current->getNext();
     }
     
     return current->getData();
