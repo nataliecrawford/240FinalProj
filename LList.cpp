@@ -68,18 +68,36 @@ void LList::insert(int index, int value) {
 }
 
 int LList::remove(int index) {
+    current = head;
     if(index >= length){
         index = length-1;
+        for(int i = 0; i < index; i++) {
+            current = current->getNext();
+        }
+        Datum *temp = current->getNext();
+        int data = temp->getData();
+        delete temp;
+        tail = current;
+        length --;
     }
-    if(index < 0){
+    if(index <= 0){
         index = 0;
+        Datum *temp = head;
+        int data = temp->getData();
+        head = current->getNext();
+        delete temp;
+        length --;
+        return data;
     }
-    for(int i = 0; i < index; i++) {
-        current = current->getNext();
-    } //current is now equal to index - 1
-    int data = current->getData();
-    current->setNext(*current->getNext());
-    return data;
+    else{
+        for(int i = 0; i < index; i++) {
+            current = current->getNext();
+        } //current is now equal to index - 1
+        int data = current->getData();
+        current->setNext(*current->getNext());
+        return data;
+    }
+    
 
 }
 
