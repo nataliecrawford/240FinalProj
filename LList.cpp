@@ -192,11 +192,13 @@ int LList::size() const {
 }
 
 void LList::clear() {
-    while(head->getNext() != nullptr){
+    for(int i = 0; i <= length; i++) {
         current = head;
         head = head->getNext();
         delete current;
     }
+    delete head;
+    delete tail;
     length = 0;
 }
 
