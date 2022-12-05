@@ -98,7 +98,7 @@ int main() {
     */
 
     LList list9(list3);
-    //checked by mia: 
+    //checked by mia: segmentation
     cout << "******** Testing Remove ********" << endl;
     cout << "list9.remove(0): " << list9.remove(0) << "\t" << list9 << endl;
     cout << "list9.remove(-1): " << list9.remove(-1) << "\t" << list9 << endl;

@@ -64,23 +64,39 @@ void LList::insert(int index, int value) {
     Datum *ins = new Datum(*(current)); //ins and current are pointing to the same thing
     ins->setData(value); //resets ins to the correct value
     current->setNext(*ins); //sets current's next to be ins
+    length++;
     return;
 }
 
 int LList::remove(int index) {
-    if(index >= length){
-        index = length-1;
-    }
-    if(index < 0){
+    //remove first
+    if(index <= 0){
         index = 0;
+        current = head;
+        head->setData((current->getNext()->getData()));
+        head->setNext(*(current->getNext()));
+        int data = current->getData();
+        length--;
+        delete current;
+        current = head;
+        return data;
     }
-    for(int i = 0; i < index; i++) {
+    
+    if(index >= length){
+        index = length - 1;      
+    }
+
+    current = head;
+    for(int i = 1; i < index; i++) {
         current = current->getNext();
     } //current is now equal to index - 1
-    int data = current->getData();
-    current->setNext(*current->getNext());
+    Datum *del = new Datum(*(current->getNext()));
+    int data = del->getData();
+    current->setData((del->getNext()->getData()));
+    current->setNext(*(del->getNext()));
+    length--;
+    delete del;
     return data;
-
 }
 
 bool LList::contains(int value) const {
