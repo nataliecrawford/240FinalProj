@@ -28,7 +28,6 @@ int main() {
     cout << "List5: " << list5 << endl;
     cout << endl;
 
-/*
     //tested by mia: seg fault after printing "list4 = list2: "
     cout << "******** Testing = ********" << endl;
     list4 = list2;
@@ -39,7 +38,6 @@ int main() {
     // Reset
     list2 = list4;
     list4 = list0 = list;
-*/
 
     //checked by mia: works
     cout << "******** Testing == ********" << endl;
@@ -73,7 +71,6 @@ int main() {
     cout << "List2 + list1 + list3: " << list9 << endl;
     cout << endl;
 
-/*
     //checked by mia: segmentation fault after "list9[100]: 2"
     cout << "******** Testing Right [] Indexing ********" << endl;
     int print = list9[3];
@@ -111,10 +108,7 @@ int main() {
     cout << "list9.remove(list9.size()): " << list9.remove(list9.size()) << "\t" << list9 << endl;
     cout << "list.remove(0): " << list.remove(0) << endl;
     cout << endl;
-*/
 
-    //LList list9(list3);
-    //LList list7(list3);
     //checked by mia: works
     cout << "******** Testing contains ********" << endl;
     cout << "list9.contains(10): " << list9.contains(10) << endl;
@@ -183,9 +177,9 @@ int main() {
     list3.~LList();
     list4.~LList();
     list5.~LList();
-    //list6.~LList();
+    list6.~LList();
     list7.~LList();
-    //list8.~LList();
+    list8.~LList();
     list9.~LList();
     //list10.~LList();
     //list11.~LList();
