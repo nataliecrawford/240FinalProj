@@ -74,7 +74,7 @@ const LList LList::operator=(const LList &rhs) {
 void LList::insert(int index, int value) {
     current = head;
     //inserting at head
-    if(index == 0) {
+    if(index <= 0) {
         Datum *ins = new Datum(value);
         ins->setNext(*(current));
         head = ins;
@@ -82,18 +82,26 @@ void LList::insert(int index, int value) {
         return;
     }  
 
+    //inserting at tail
+    if(index >= length) {
+        for(int i = 0; i < index - 1; i++) {
+            current = current->getNext();
+        } //current is now equal to index - 1
+        Datum *ins = new Datum(*(current));
+        ins->setData(value); 
+        current->setNext(*ins); 
+        tail = ins;
+        length++;
+        return;
+    }
+
+    //inserting in the middle
     for(int i = 0; i < index - 1; i++) {
         current = current->getNext();
     } //current is now equal to index - 1
-    
     Datum *ins = new Datum(*(current));
     ins->setData(value); 
-    current->setNext(*ins); 
-    
-    if(index == length) {
-        tail = ins;
-    }
-
+    current->setNext(*ins);
     length++;
     return;
 }

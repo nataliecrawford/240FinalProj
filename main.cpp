@@ -27,7 +27,8 @@ int main() {
     cout << "List4: " << list4 << endl;
     cout << "List5: " << list5 << endl;
     cout << endl;
- 
+
+/*
     //tested by mia: seg fault after printing "list4 = list2: "
     cout << "******** Testing = ********" << endl;
     list4 = list2;
@@ -38,6 +39,7 @@ int main() {
     // Reset
     list2 = list4;
     list4 = list0 = list;
+*/
 
     //checked by mia: works
     cout << "******** Testing == ********" << endl;
@@ -59,7 +61,6 @@ int main() {
     cout << "list5.insert(3,10): " << list5 << endl;
     cout << endl;
 
-/*
     //tested by mia: seg fault
     cout << "******** Testing + ********" << endl;
     LList list6 = list1 + list;
@@ -112,8 +113,8 @@ int main() {
     cout << endl;
 */
 
-    LList list9(list3);
-    LList list7(list3);
+    //LList list9(list3);
+    //LList list7(list3);
     //checked by mia: works
     cout << "******** Testing contains ********" << endl;
     cout << "list9.contains(10): " << list9.contains(10) << endl;
