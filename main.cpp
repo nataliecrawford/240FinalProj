@@ -28,7 +28,6 @@ int main() {
     cout << "List5: " << list5 << endl;
     cout << endl;
 
-    /*
     //tested by mia: seg fault
     cout << "******** Testing = ********" << endl;
     list4 = list2;
@@ -38,7 +37,6 @@ int main() {
     // Reset
     list2 = list4;
     list4 = list0 = list;
-    */
 
     //checked by mia: works
     cout << "******** Testing == ********" << endl;
@@ -140,6 +138,7 @@ int main() {
     cout << "list7.insert(0,10): " << list7 << endl;
     cout << endl;
 
+    //not tested
     cout << "******** Testing >> ********" << endl;
     LList list10;
     cout << "Input a number to append to list10:";
@@ -154,6 +153,7 @@ int main() {
     cout << "4 >> list11: " << list11 << endl;
     cout << endl;
 
+    //not tested
     cout << "******** Testing Left [] Indexing ********" << endl;
     list11[0] = 5;
     cout << "list11[0] = 5: " << list11 << endl;
