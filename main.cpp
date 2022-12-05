@@ -17,7 +17,6 @@ int main() {
     LList list4(list0);
     LList list5(list3);
 
-    /*
     //checked by mia: works
     cout << "******** Testing << ********" << endl;
     cout << "List: " << list << endl;
@@ -29,6 +28,8 @@ int main() {
     cout << "List5: " << list5 << endl;
     cout << endl;
 
+    /*
+    //tested by mia: does not work, seg fault
     cout << "******** Testing = ********" << endl;
     list4 = list2;
     list0 = list2 = list5;
@@ -37,6 +38,7 @@ int main() {
     // Reset
     list2 = list4;
     list4 = list0 = list;
+    */
 
     //checked by mia: works
     cout << "******** Testing == ********" << endl;
@@ -45,6 +47,7 @@ int main() {
     cout << "list3 == list2: " << (list3 == list2) << endl;
     cout << "list0 == list1: " << (list0 == list1) << endl;
     cout << endl;
+
 
     cout << "******** Testing insert ********" << endl;
     list0.insert(0, 10);
