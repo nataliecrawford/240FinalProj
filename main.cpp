@@ -98,9 +98,9 @@ int main() {
     cout << "list7.indexOf(5): " << list7.indexOf(5) << endl;
     cout << "list.indexOf(3): " << list.indexOf(3) << endl;
     cout << endl;
-    */
+    
 
-    LList list9(list3);
+   // LList list9(list3);
     //checked by mia: 
     cout << "******** Testing Remove ********" << endl;
     cout << "list9.remove(0): " << list9.remove(0) << "\t" << list9 << endl;
@@ -111,7 +111,7 @@ int main() {
     cout << "list.remove(0): " << list.remove(0) << endl;
     cout << endl;
 
-    /*
+    
     cout << "******** Testing contains ********" << endl;
     cout << "list9.contains(10): " << list9.contains(10) << endl;
     cout << "list9.contains(100): " << list9.contains(100) << endl;
@@ -166,7 +166,7 @@ int main() {
     cout << "list11[100] = 5: " << list11 << endl;
     list[0] = 5;
     cout << "list[0] = 5: " << list << endl;
-    */
+    
     
     list.~LList();
     list1.~LList();
@@ -174,10 +174,10 @@ int main() {
     list3.~LList();
     list4.~LList();
     list5.~LList();
-    //list6.~LList();
-    //list7.~LList();
-    //list8.~LList();
+    list6.~LList();
+    list7.~LList();
+    list8.~LList();
     list9.~LList();
-    //list10.~LList();
-    //list11.~LList();
+    list10.~LList();
+    list11.~LList();
 }

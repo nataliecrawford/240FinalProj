@@ -40,9 +40,15 @@ LList::~LList() {
 
 const LList LList::operator+(const LList &rhs) const {
     LList temp(*this);
-    (temp.tail)->setNext(*(rhs.head));
-    temp.tail = rhs.tail;
+    LList temp2(rhs);
+    int currentLength = size();
+    temp.current = temp.head;
+    for(int i = 0; i<temp.length; i++){
+        temp.current = temp.current->getNext();
+    }
     temp.length = size() + rhs.size();
+    temp.current->setNext(*(rhs.head));
+   
     return temp;
 }
 
