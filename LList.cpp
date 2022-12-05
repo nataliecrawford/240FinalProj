@@ -59,17 +59,32 @@ const LList LList::operator=(const LList &rhs) {
 }
 
 void LList::insert(int index, int value) {
-    if(index < 0 || index >= length) {
-        cout << "Invalid index";
+    if(index < 0 || index > length) {
+        cout << "Invalid index ";
         return;
     }
+    current = head;
+    //inserting at head
+    if(index == 0) {
+        Datum *ins = new Datum(value);
+        ins->setNext(*(current));
+        head = ins;
+        length++;
+        return;
+    }  
 
     for(int i = 0; i < index - 1; i++) {
         current = current->getNext();
     } //current is now equal to index - 1
-    Datum *ins = new Datum(*(current)); //ins and current are pointing to the same thing
-    ins->setData(value); //resets ins to the correct value
-    current->setNext(*ins); //sets current's next to be ins
+    
+    Datum *ins = new Datum(*(current));
+    ins->setData(value); 
+    current->setNext(*ins); 
+    
+    if(index == length) {
+        tail = ins;
+    }
+
     length++;
     return;
 }
