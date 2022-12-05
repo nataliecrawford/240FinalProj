@@ -27,8 +27,8 @@ int main() {
     cout << "List4: " << list4 << endl;
     cout << "List5: " << list5 << endl;
     cout << endl;
-    /* */
-    //tested by mia: seg fault
+    
+    //tested by mia: works (memory leaks)
     cout << "******** Testing = ********" << endl;
     list4 = list2;
     list0 = list2 = list5;
@@ -57,7 +57,7 @@ int main() {
     list5.insert(3, 10);
     cout << "list5.insert(3,10): " << list5 << endl;
     cout << endl;
-/*
+
     //tested by mia: seg fault
     cout << "******** Testing + ********" << endl;
     LList list6 = list1 + list;
@@ -70,7 +70,7 @@ int main() {
     cout << "List2 + list1 + list3: " << list9 << endl;
     cout << endl;
 
-    /*
+/*
     //checked by mia: segmentation fault after "list9[100]: 2"
     cout << "******** Testing Right [] Indexing ********" << endl;
     int print = list9[3];
@@ -108,7 +108,7 @@ int main() {
     cout << "list9.remove(list9.size()): " << list9.remove(list9.size()) << "\t" << list9 << endl;
     cout << "list.remove(0): " << list.remove(0) << endl;
     cout << endl;
-    */
+*/
 
     //checked by mia: works
     cout << "******** Testing contains ********" << endl;
@@ -125,13 +125,11 @@ int main() {
     cout << "list7.isEmpty(): " << list7.isEmpty() << endl;
     cout << "list.isEmpty(): " << list.isEmpty() << endl;
     cout << endl;
-    */
 
     //checked by mia: memory leak before "list7.clear()"
     cout << "******** Testing clear ********" << endl;
     list9.clear();
     cout << "list9.clear(): " << list9 << endl;
-    /*
     list7.clear();
     cout << "list7.clear(): " << list7 << endl;
     list.clear();
@@ -140,8 +138,8 @@ int main() {
     cout << "list9.insert(0,10): " << list9 << endl;
     list7.insert(0,10);
     cout << "list7.insert(0,10): " << list7 << endl;
-    */
     cout << endl;
+    
 /*
     //not tested
     cout << "******** Testing >> ********" << endl;
@@ -172,7 +170,7 @@ int main() {
     cout << "list11[100] = 5: " << list11 << endl;
     list[0] = 5;
     cout << "list[0] = 5: " << list << endl;
-    */
+*/
     
     list.~LList();
     list1.~LList();
@@ -180,8 +178,8 @@ int main() {
     list3.~LList();
     list4.~LList();
     list5.~LList();
-   // list6.~LList();
-    //list7.~LList();
+    //list6.~LList();
+    list7.~LList();
     //list8.~LList();
     list9.~LList();
     //list10.~LList();

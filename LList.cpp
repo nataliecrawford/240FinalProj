@@ -67,10 +67,6 @@ const LList LList::operator=(const LList &rhs) {
 }
 
 void LList::insert(int index, int value) {
-    if(index < 0 || index > length) {
-        cout << "Invalid index ";
-        return;
-    }
     current = head;
     //inserting at head
     if(index == 0) {
