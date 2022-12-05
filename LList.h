@@ -22,7 +22,7 @@ class LList {
         LList(int arr[], int size);
         LList(const LList &rhs);
         ~LList();
-
+        
         const LList operator+(const LList &rhs) const;
         const LList operator=(const LList &rhs);
 

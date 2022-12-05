@@ -17,6 +17,8 @@ int main() {
     LList list4(list0);
     LList list5(list3);
 
+    /*
+    //checked by mia: works
     cout << "******** Testing << ********" << endl;
     cout << "List: " << list << endl;
     cout << "List0: " << list0 << endl;
@@ -27,7 +29,6 @@ int main() {
     cout << "List5: " << list5 << endl;
     cout << endl;
     
-    /*
     cout << "******** Testing = ********" << endl;
     list4 = list2;
     list0 = list2 = list5;
@@ -36,7 +37,8 @@ int main() {
     // Reset
     list2 = list4;
     list4 = list0 = list;
-
+    
+    //checked by mia: works
     cout << "******** Testing == ********" << endl;
     cout << "list == list0: " << (list == list0) << endl;
     cout << "list3 == list5: " << (list3 == list5) << endl;
@@ -66,6 +68,7 @@ int main() {
     cout << "List2 + list1 + list3: " << list9 << endl;
     cout << endl;
 
+    //checked by mia: stops after "list9[100]: 2" and says displays "segmentation fault"
     cout << "******** Testing Right [] Indexing ********" << endl;
     int print = list9[3];
     cout << "list9[3]: " << print << endl;
@@ -82,7 +85,11 @@ int main() {
     print = list[0];
     cout << "list[0]: " << print << endl;
     cout << endl;
+    */
 
+    LList list9(list3);
+    LList list7(list3);
+    //checked by mia: 
     cout << "******** Testing indexOf ********" << endl;
     cout << "list9.indexOf(1): " << list9.indexOf(1) << endl;
     cout << "list9.indexOf(10): " << list9.indexOf(10) << endl;
@@ -92,6 +99,7 @@ int main() {
     cout << "list.indexOf(3): " << list.indexOf(3) << endl;
     cout << endl;
 
+    /*
     cout << "******** Testing Remove ********" << endl;
     cout << "list9.remove(0): " << list9.remove(0) << "\t" << list9 << endl;
     cout << "list9.remove(-1): " << list9.remove(-1) << "\t" << list9 << endl;

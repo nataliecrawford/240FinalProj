@@ -146,7 +146,7 @@ int LList::indexOf(int value) const {
         }
         temp = temp->getNext();
     }
-
+    return -1;
 }
 
 bool LList::isEmpty() const {
