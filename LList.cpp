@@ -146,17 +146,22 @@ int LList::remove(int index) {
     else{
         for(int i = 0; i < index; i++) {
             current = current->getNext();
-        } //current is now equal to index - 1
+        } 
+        Datum *temp = current;
         int data = current->getData();
-        current->setNext(*current->getNext());
+       //current->setNext(*current->getNext());
+        current = current->getNext();
+        delete temp;
+        length--;
         return data;
+
     }
     
 
 }
 
 bool LList::contains(int value) const {
-    Datum * temp = new Datum(*head);
+    Datum * temp = head;
     for(int i = 0; i<length; i++){
         if(temp->getData() == value){
             return true;
