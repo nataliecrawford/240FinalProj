@@ -45,16 +45,24 @@ LList::~LList() {
 
 const LList LList::operator+(const LList &rhs) const {
     LList temp(*this);
-    LList temp2(rhs);
-    int currentLength = size();
-    temp.current = temp.head;
-    for(int i = 0; i<temp.length; i++){
-        temp.current = temp.current->getNext();
+    
+    int arr[length+ rhs.size()];
+    for(int i = 0; i < temp.length; i++) {
+        arr[i] = temp[i];
     }
-    temp.length = size() + rhs.size();
-    temp.current->setNext(*(rhs.head));
-   
-    return temp;
+    
+    for(int i = 0; i<rhs.size(); i++){
+        arr[temp.length+i] = rhs[i];
+    }
+
+    
+    temp.head = temp.current = temp.tail = new Datum(arr[0]);
+    for(int i = 1; i < length; i++) {
+        Datum *temp2 = new Datum(arr[i]);
+        current->setNext(*temp2);
+        temp.current = temp.tail = temp2; 
+    }
+    return LList(arr, length+ rhs.size());
 }
 
 const LList LList::operator=(const LList &rhs) {

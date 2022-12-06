@@ -28,7 +28,7 @@ int main() {
     cout << "List5: " << list5 << endl;
     cout << endl;
 
-    //tested by mia: seg fault after printing "list4 = list2: "
+    //tested by natalie: works
     cout << "******** Testing = ********" << endl;
     list4 = list2;
     list0 = list2 = list5;
@@ -59,7 +59,7 @@ int main() {
     cout << "list5.insert(3,10): " << list5 << endl;
     cout << endl;
 
-    //tested by mia: seg fault
+    //tested by natalie: works!
     cout << "******** Testing + ********" << endl;
     LList list6 = list1 + list;
     cout << "list1 + list: " << list6 << endl;
