@@ -48,37 +48,6 @@ LList::~LList() {
 }
 
 const LList LList::operator+(const LList &rhs) const {
-    /*
-    LList list;
-    Datum *NEWcurrent = list.head;
-
-    Datum *LHScurrent = head;
-    while(LHScurrent->getNext() != nullptr) {
-        Datum *temp = new Datum(LHScurrent->getData());
-        NEWcurrent->setNext(*temp);
-        LHScurrent = LHScurrent->getNext();
-        NEWcurrent = temp;
-    }
-    
-    Datum *RHScurrent = rhs.head;
-    while(RHScurrent->getNext() != nullptr) {
-        Datum *temp = new Datum(RHScurrent->getData());
-        NEWcurrent->setNext(*temp);
-        RHScurrent = RHScurrent->getNext();
-        NEWcurrent = temp;
-    }
-    */
-    /*
-    LList list;
-    for(int i = 0; i < length; i++) {
-        list.insert(i, current->getData());
-        current = current->getNext();
-    }
-    for(int i = 0; i < rhs.size(); i++) {
-        list.insert(length, rhs[i]);
-    }
-    */
-    
     Datum * current = head;
     int s1 = size();
     int s2 = rhs.size();
@@ -92,7 +61,14 @@ const LList LList::operator+(const LList &rhs) const {
         arr[s1 + i] = rhs[i];
     }
     
-    LList list(arr, s1 + s2);
+    LList list;
+    list.head = new Datum(arr[0]);
+    current = list.head;
+    for(int i = 1; i < s1 + s2; i++) {
+        Datum *temp = new Datum(arr[i]);
+        current->setNext(*temp);
+        current = temp;
+    }
     return list;
 }
 
