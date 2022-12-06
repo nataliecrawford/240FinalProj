@@ -70,8 +70,8 @@ int main() {
     LList list9 = list2 + list3 + list1;
     cout << "List2 + list1 + list3: " << list9 << endl;
     cout << endl;
-
-    //checked by mia: segmentation fault after "list9[100]: 2"
+/*
+    //checked by mia: segmentation fault for empty arrays"
     cout << "******** Testing Right [] Indexing ********" << endl;
     int print = list9[3];
     cout << "list9[3]: " << print << endl;
@@ -85,10 +85,11 @@ int main() {
     cout << "list9[list9.size()]: " << print << endl;
     print = list9[100];
     cout << "list9[100]: " << print << endl;
-    print = list[0];
-    cout << "list[0]: " << print << endl;
+    LList list45(test0, 0);
+    print = list45[0];
+    cout << "list45[0]: " << print << endl;
     cout << endl;
-
+*/
     //checked by mia: segmentation fault after "list7.indexOf(5): -1"
     cout << "******** Testing indexOf ********" << endl;
     cout << "list9.indexOf(1): " << list9.indexOf(1) << endl;

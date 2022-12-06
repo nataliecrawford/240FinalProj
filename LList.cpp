@@ -167,6 +167,10 @@ bool LList::contains(int value) const {
 }
 
 int LList::operator[](int index) const {
+    if(length<=0 && head==nullptr){
+        cout<<"empty";
+        return 0;
+    }
     if(index < 0) {
         return head->getData();
     }
@@ -183,6 +187,10 @@ int LList::operator[](int index) const {
 }
 
 int & LList::operator[](int index) {
+    if(head==nullptr){
+        cout<<"empty";
+        //return -1;
+    }
     if(index < 0) {
         return head->getData();
     }
@@ -199,6 +207,10 @@ int & LList::operator[](int index) {
 }
 
 int LList::indexOf(int value) const {
+    if(head==nullptr){
+        //cout<<"empty";
+        return -1;
+    }
     Datum * temp = new Datum(*(head));
     for(int i = 0; i<length; i++){
         if(temp->getData() == value){
