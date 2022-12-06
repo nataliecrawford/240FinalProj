@@ -42,30 +42,24 @@ LList::LList(const LList &rhs) {
 }
 
 LList::~LList() {
-    clear();
+    if(head != nullptr) {
+        clear();
+    }
 }
 
 const LList LList::operator+(const LList &rhs) const {
-    LList temp(*this);
-    
+    Datum *current = head;
     int arr[length+ rhs.size()];
-    for(int i = 0; i < temp.length; i++) {
-        arr[i] = temp[i];
+    for(int i = 0; i < length; i++) {
+        arr[i] = current->getData();
+        current = current->getNext();
     }
     
     for(int i = 0; i<rhs.size(); i++){
-        arr[temp.length+i] = rhs[i];
+        arr[length + i] = rhs[i];
     }
 
-    
-    temp.head = new Datum(arr[0]);
-    Datum *current = temp.head;
-    for(int i = 1; i < length; i++) {
-        Datum *temp2 = new Datum(arr[i]);
-        current->setNext(*temp2);
-        current = temp2; 
-    }
-    return LList(arr, length+ rhs.size());
+    return LList(arr, length + rhs.size());
 }
 
 const LList LList::operator=(const LList &rhs) {
@@ -256,7 +250,8 @@ void LList::clear() {
         delete current;
     }
     
-    delete head;   
+    delete head;
+
     length = 0;
     return;
 }

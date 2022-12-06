@@ -92,14 +92,14 @@ int main() {
     cout << "list9[list9.size()]: " << print << endl;
     print = list9[100];
     cout << "list9[100]: " << print << endl;
-///*    
+/*    
     print = list[3];
     cout << "list[3]: " << print << endl;
     LList list45(test0, 0);
     print = list45[0];
     cout << "list45[0]: " << print << endl;
     cout << endl;
-//*/
+*/
 
     //checked by natalie: works"
     cout << "******** Testing indexOf ********" << endl;
@@ -153,7 +153,7 @@ int main() {
     
     //tested by mia: seg fault when empty
     cout << "******** Testing >> ********" << endl;
-///* 
+/* 
     LList list10;
     cout << "Input a number to append to list10: ";
     cin >> list10;
@@ -161,7 +161,7 @@ int main() {
     cout << "Input a number to append to list10: ";
     cin >> list10;
     cout << "11 >> list10: " << list10 << endl;
-//*/
+*/
     LList list11(test3, 3);
     cout << "Input a number to append to list11: ";
     cin >> list11;
@@ -180,21 +180,8 @@ int main() {
     cout << "list11[list11.size()] = 10: " << list11 << endl;
     list11[100] = 100;
     cout << "list11[100] = 100: " << list11 << endl;
-///*
+/*
     list[0] = 5;
     cout << "list[0] = 5: " << list << endl;
-//*/
-    
-    list.~LList();
-    list1.~LList();
-    list2.~LList();
-    list3.~LList();
-    list4.~LList();
-    list5.~LList();
-    list6.~LList();
-    list7.~LList();
-    list8.~LList();
-    list9.~LList();
-    list10.~LList();
-    list11.~LList();
+*/
 }
