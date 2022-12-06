@@ -5,12 +5,12 @@ using namespace std;
 
 Datum::Datum() {
     setData(0);
-    next = NULL;
+    next = nullptr;
 }
 
 Datum::Datum(int value) {
     setData(value);
-    next = NULL;
+    next = nullptr;
 }
 
 Datum::Datum(const Datum &rhs) {

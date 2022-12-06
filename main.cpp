@@ -27,7 +27,7 @@ int main() {
     cout << "List4: " << list4 << endl;
     cout << "List5: " << list5 << endl;
     cout << endl;
-
+/*
     //tested by natalie: works
     cout << "******** Testing = ********" << endl;
     list4 = list2;
@@ -93,7 +93,7 @@ int main() {
     cout << "list45[0]: " << print << endl;
     cout << endl;
 */
-
+/*
     //checked by natalie: works"
     cout << "******** Testing indexOf ********" << endl;
     cout << "list9.indexOf(1): " << list9.indexOf(1) << endl;
@@ -129,7 +129,9 @@ int main() {
     cout << "list7.isEmpty(): " << list7.isEmpty() << endl;
     cout << "list.isEmpty(): " << list.isEmpty() << endl;
     cout << endl;
-
+*/
+    LList list9(list3);
+    LList list7(list3);
     //tested by mia: works but with a very large memory leak
     cout << "******** Testing clear ********" << endl;
     list9.clear();
@@ -182,9 +184,9 @@ int main() {
     list3.~LList();
     list4.~LList();
     list5.~LList();
-    list6.~LList();
+    //list6.~LList();
     list7.~LList();
-    list8.~LList();
+    //list8.~LList();
     list9.~LList();
     //list10.~LList();
     list11.~LList();

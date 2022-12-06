@@ -17,9 +17,9 @@ LList::LList(int arr[], int size) {
         length = size;
         head = current = tail = new Datum(arr[0]);
         for(int i = 1; i < length; i++) {
-            Datum *temp = new Datum(arr[i]);
+           Datum *temp = new Datum(arr[i]);
             current->setNext(*temp);
-            current = tail = temp; 
+        current = tail = temp;
         }
     }
 }
@@ -252,9 +252,16 @@ void LList::clear() {
         head = head->getNext();
         delete current;
     }
-
-    //delete head;
-    //delete tail;
+    
+    /*
+    if(head != nullptr) {
+        delete head;
+    }
+    */
+    if(tail != nullptr) {
+        delete tail;
+    }
+    
     length = 0;
     return;
 }
