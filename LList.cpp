@@ -143,7 +143,7 @@ int LList::remove(int index) {
         length --;
         return data;
     }
-    else{
+    else {
         for(int i = 0; i < index - 1; i++) {
             current = current->getNext();
         } 
