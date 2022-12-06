@@ -282,6 +282,7 @@ void LList::clear() {
     }
     
     delete head;
+    head = nullptr;
 
     length = 0;
     return;
