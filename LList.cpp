@@ -144,17 +144,15 @@ int LList::remove(int index) {
         return data;
     }
     else{
-        for(int i = 0; i < index; i++) {
+        for(int i = 0; i < index - 1; i++) {
             current = current->getNext();
         } 
-        Datum *temp = current;
-        int data = current->getData();
-       //current->setNext(*current->getNext());
-        current = current->getNext();
-        delete temp;
+        Datum *del = current->getNext();
+        int data = del->getData();
+        current->setNext(*del->getNext());
+        delete del;
         length--;
         return data;
-
     }
     
 
