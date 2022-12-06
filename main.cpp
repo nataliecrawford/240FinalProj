@@ -92,14 +92,14 @@ int main() {
     cout << "list9[list9.size()]: " << print << endl;
     print = list9[100];
     cout << "list9[100]: " << print << endl;
-/*    
+///*    
     print = list[3];
     cout << "list[3]: " << print << endl;
     LList list45(test0, 0);
     print = list45[0];
     cout << "list45[0]: " << print << endl;
     cout << endl;
-*/
+//*/
 
     //checked by natalie: works"
     cout << "******** Testing indexOf ********" << endl;
@@ -137,7 +137,7 @@ int main() {
     cout << "list.isEmpty(): " << list.isEmpty() << endl;
     cout << endl;
 
-    //tested by mia: works but with a very large memory leak
+    //tested by mia: works
     cout << "******** Testing clear ********" << endl;
     list9.clear();
     cout << "list9.clear(): " << list9 << endl;
@@ -151,9 +151,9 @@ int main() {
     cout << "list7.insert(0,10): " << list7 << endl;
     cout << endl;
     
-    //tested by mia: seg fault when default constructor
+    //tested by mia: seg fault when empty
     cout << "******** Testing >> ********" << endl;
-/*
+///* 
     LList list10;
     cout << "Input a number to append to list10: ";
     cin >> list10;
@@ -161,14 +161,14 @@ int main() {
     cout << "Input a number to append to list10: ";
     cin >> list10;
     cout << "11 >> list10: " << list10 << endl;
-*/
+//*/
     LList list11(test3, 3);
     cout << "Input a number to append to list11: ";
     cin >> list11;
     cout << "4 >> list11: " << list11 << endl;
     cout << endl;
 
-    //tested by mia: works for everything but the default constructor
+    //tested by mia: seg fault for empty
     cout << "******** Testing Left [] Indexing ********" << endl;
     list11[0] = 5;
     cout << "list11[0] = 5: " << list11 << endl;
@@ -180,8 +180,10 @@ int main() {
     cout << "list11[list11.size()] = 10: " << list11 << endl;
     list11[100] = 100;
     cout << "list11[100] = 100: " << list11 << endl;
-    //list[0] = 5;
-    //cout << "list[0] = 5: " << list << endl;
+///*
+    list[0] = 5;
+    cout << "list[0] = 5: " << list << endl;
+//*/
     
     list.~LList();
     list1.~LList();
@@ -193,6 +195,6 @@ int main() {
     list7.~LList();
     list8.~LList();
     list9.~LList();
-    //list10.~LList();
+    list10.~LList();
     list11.~LList();
 }
