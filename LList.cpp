@@ -48,18 +48,52 @@ LList::~LList() {
 }
 
 const LList LList::operator+(const LList &rhs) const {
-    Datum *current = head;
-    int arr[length+ rhs.size()];
+    /*
+    LList list;
+    Datum *NEWcurrent = list.head;
+
+    Datum *LHScurrent = head;
+    while(LHScurrent->getNext() != nullptr) {
+        Datum *temp = new Datum(LHScurrent->getData());
+        NEWcurrent->setNext(*temp);
+        LHScurrent = LHScurrent->getNext();
+        NEWcurrent = temp;
+    }
+    
+    Datum *RHScurrent = rhs.head;
+    while(RHScurrent->getNext() != nullptr) {
+        Datum *temp = new Datum(RHScurrent->getData());
+        NEWcurrent->setNext(*temp);
+        RHScurrent = RHScurrent->getNext();
+        NEWcurrent = temp;
+    }
+    */
+    /*
+    LList list;
     for(int i = 0; i < length; i++) {
+        list.insert(i, current->getData());
+        current = current->getNext();
+    }
+    for(int i = 0; i < rhs.size(); i++) {
+        list.insert(length, rhs[i]);
+    }
+    */
+    
+    Datum * current = head;
+    int s1 = size();
+    int s2 = rhs.size();
+    int arr[s1 + s2];
+    for(int i = 0; i < s1; i++) {
         arr[i] = current->getData();
         current = current->getNext();
     }
     
-    for(int i = 0; i<rhs.size(); i++){
-        arr[length + i] = rhs[i];
+    for(int i = 0; i < s2; i++){
+        arr[s1 + i] = rhs[i];
     }
-
-    return LList(arr, length + rhs.size());     //THERE IS SOME ISSUE WITH THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    
+    LList list(arr, s1 + s2);
+    return list;
 }
 
 const LList LList::operator=(const LList &rhs) {
@@ -85,7 +119,7 @@ void LList::insert(int index, int value) {
     Datum *current = head;
     //inserting at head
     if(index <= 0) {
-        Datum *ins = new Datum(value); //HERE'S A NEW!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        Datum *ins = new Datum(value);
         ins->setNext(*(current));
         head = ins;
         length++;
@@ -97,7 +131,7 @@ void LList::insert(int index, int value) {
         for(int i = 0; i < index - 1; i++) {
             current = current->getNext();
         } //current is now equal to index - 1
-        Datum *ins = new Datum(*(current)); //HERE'S A NEW!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        Datum *ins = new Datum(*(current));
         ins->setData(value); 
         current->setNext(*ins); 
         length++;
@@ -108,7 +142,7 @@ void LList::insert(int index, int value) {
     for(int i = 0; i < index - 1; i++) {
         current = current->getNext();
     } //current is now equal to index - 1
-    Datum *ins = new Datum(*(current)); //HERE'S A NEW!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    Datum *ins = new Datum(*(current));
     ins->setData(value); 
     current->setNext(*ins);
     length++;
@@ -193,7 +227,7 @@ int LList::operator[](int index) const {
 
 int & LList::operator[](int index) {
     if(head==nullptr) {
-        insert(0, 0);
+        head = new Datum(0);
         return head->getData();
     }
     if(index < 0) {
@@ -247,7 +281,7 @@ void LList::clear() {
         delete current;
     }
     
-    delete head; //ERRORS HAVE SOMETHING TO DO WITH THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    delete head;
 
     length = 0;
     return;
