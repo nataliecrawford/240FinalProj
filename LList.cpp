@@ -223,13 +223,14 @@ int LList::indexOf(int value) const {
         return -1;
     }
     Datum temp = *head;
-    for(int i = 0; i<length-1; i++){
+    for(int i = 0; i<length; i++){
         if(temp.getData() == value){
             return i;
         }
-        temp = *(temp.getNext());
+        if(i <length-1){
+            temp = *(temp.getNext());
+        }
     }
-    
     return -1;
 }
 
