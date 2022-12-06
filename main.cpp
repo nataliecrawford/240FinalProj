@@ -100,7 +100,7 @@ int main() {
     cout << "list.indexOf(3): " << list.indexOf(3) << endl;
     cout << endl;
 
-    //checked by mia: seg fault at "list9.remove(2)"
+    //checked by natalie: works!
     cout << "******** Testing Remove ********" << endl;
     cout << "list9.remove(0): " << list9.remove(0) << "\t" << list9 << endl;
     cout << "list9.remove(-1): " << list9.remove(-1) << "\t" << list9 << endl;
@@ -110,7 +110,7 @@ int main() {
     cout << "list.remove(0): " << list.remove(0) << endl;
     cout << endl;
 
-    //checked by mia: works//not
+    //checked by mia: works
     cout << "******** Testing contains ********" << endl;
     cout << "list9.contains(10): " << list9.contains(10) << endl;
     cout << "list9.contains(100): " << list9.contains(100) << endl;
