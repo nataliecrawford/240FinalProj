@@ -59,16 +59,19 @@ const LList LList::operator+(const LList &rhs) const {
 
 const LList LList::operator=(const LList &rhs) {
     clear();
-    LList temp(rhs);
-    length=rhs.size();
-    temp.current = temp.head;
-    head = temp.head;
-    current = temp.current;
-    
-    for(int i = 0; i<length; i++){
-        current->setNext(*(temp.current->getNext()));
+    length = rhs.size();
+    int arr[length];
+    for(int i = 0; i < rhs.size(); i++) {
+        arr[i] = rhs[i];
     }
-    return temp;
+    
+    head = current = tail = new Datum(arr[0]);
+    for(int i = 1; i < length; i++) {
+        Datum *temp = new Datum(arr[i]);
+        current->setNext(*temp);
+        current = tail = temp; 
+    }
+    return LList(arr, length);
 }
 
 void LList::insert(int index, int value) {
