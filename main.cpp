@@ -78,7 +78,7 @@ int main() {
     cout << "List2 + list1 + list3: " << list9 << endl;
     cout << endl;
 
-    //checked by mia: segmentation fault for empty arrays"
+    //checked by mia: works!!!
     cout << "******** Testing Right [] Indexing ********" << endl;
     int print = list9[3];
     cout << "list9[3]: " << print << endl;
@@ -91,15 +91,13 @@ int main() {
     print = list9[list9.size()];
     cout << "list9[list9.size()]: " << print << endl;
     print = list9[100];
-    cout << "list9[100]: " << print << endl;
-/*    
+    cout << "list9[100]: " << print << endl;    
     print = list[3];
     cout << "list[3]: " << print << endl;
     LList list45(test0, 0);
     print = list45[0];
     cout << "list45[0]: " << print << endl;
     cout << endl;
-*/
 
     //checked by natalie: works"
     cout << "******** Testing indexOf ********" << endl;
@@ -151,9 +149,8 @@ int main() {
     cout << "list7.insert(0,10): " << list7 << endl;
     cout << endl;
     
-    //tested by mia: seg fault when empty
+    //tested by mia: works!!!
     cout << "******** Testing >> ********" << endl;
-/* 
     LList list10;
     cout << "Input a number to append to list10: ";
     cin >> list10;
@@ -161,7 +158,6 @@ int main() {
     cout << "Input a number to append to list10: ";
     cin >> list10;
     cout << "11 >> list10: " << list10 << endl;
-*/
     LList list11(test3, 3);
     cout << "Input a number to append to list11: ";
     cin >> list11;
@@ -180,8 +176,6 @@ int main() {
     cout << "list11[list11.size()] = 10: " << list11 << endl;
     list11[100] = 100;
     cout << "list11[100] = 100: " << list11 << endl;
-/*
     list[0] = 5;
     cout << "list[0] = 5: " << list << endl;
-*/
 }

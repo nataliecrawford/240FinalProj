@@ -81,6 +81,7 @@ const LList LList::operator=(const LList &rhs) {
 }
 
 void LList::insert(int index, int value) {
+    
     Datum *current = head;
     //inserting at head
     if(index <= 0) {
@@ -173,30 +174,8 @@ bool LList::contains(int value) const {
 
 int LList::operator[](int index) const {
     if(head==nullptr){
-        cout<<"empty";
-        return 0;
-    }
-    if(index < 0) {
-        return head->getData();
-    }
-    else if(index >= length) {
-        index = length - 1;
-    }
-    
-    Datum temp = *head;
-    for(int i = 0; i < index; i++) {
-        temp = *(temp.getNext());
-    }
-    int value = temp.getData();
-
-    //delete temp;
-    return value;
-}
-
-int & LList::operator[](int index) {
-    if(head==nullptr){
-        cout<<"empty";
-        //return -1;
+        int num;
+        return num;
     }
     if(index < 0) {
         return head->getData();
@@ -209,7 +188,25 @@ int & LList::operator[](int index) {
     for(int i = 0; i < index; i++) {
         current = current->getNext();
     }
+    return current->getData();
+}
+
+int & LList::operator[](int index) {
+    if(head==nullptr) {
+        insert(0, 0);
+        return head->getData();
+    }
+    if(index < 0) {
+        return head->getData();
+    }
+    else if(index >= length) {
+        index = length - 1;
+    }
     
+    Datum *current = head;
+    for(int i = 0; i < index; i++) {
+        current = current->getNext();
+    }
     return current->getData();
 }
 
