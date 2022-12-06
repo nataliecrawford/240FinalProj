@@ -118,27 +118,33 @@ void LList::insert(int index, int value) {
 }
 
 int LList::remove(int index) {
+    
     if (length <= 0){
         cout<<"cannot remove anything because nothing is in the linked list, size is <=0...";
         return -1;
     }
+    
     current = head;
     if(index >= length){
         index = length-1;
-        for(int i = 0; i < index; i++) {
+        for(int i = 0; i < index-1; i++) {
             current = current->getNext();
         }
         Datum *temp = current->getNext();
         int data = temp->getData();
+        current->setNextNull();
         delete temp;
         tail = current;
         length --;
+        return data;
     }
     if(index <= 0){
         index = 0;
-        Datum *temp = head;
+        current = head;
+        Datum *temp = new Datum(*head);
         int data = temp->getData();
         head = current->getNext();
+        current = head;
         delete temp;
         length --;
         return data;
@@ -217,12 +223,10 @@ int LList::indexOf(int value) const {
     Datum * temp = new Datum(*(head));
     for(int i = 0; i<length; i++){
         if(temp->getData() == value){
-            delete temp;
             return i;
         }
         temp = temp->getNext();
     }
-    delete temp;
     return -1;
 }
 

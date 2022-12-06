@@ -41,3 +41,7 @@ Datum * Datum::getNext() const {
 void Datum::setNext(Datum &rhs) {
     next = &rhs;
 }
+
+void Datum::setNextNull(){
+    next = nullptr;
+}

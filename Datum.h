@@ -16,8 +16,11 @@ class Datum {
         int & getData();
         void setData(int value);
 
+
+
         Datum * getNext() const;
         void setNext(Datum &rhs);
+        void setNextNull();
 
     private:
         int data;
