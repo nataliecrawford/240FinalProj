@@ -3,6 +3,7 @@
 
 using namespace std;
 
+
 LList::LList(){
     head = nullptr;
     length = 0;
