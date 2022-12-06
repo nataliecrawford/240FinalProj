@@ -4,22 +4,23 @@
 using namespace std;
 
 LList::LList(){
-    head = tail = current = nullptr;
+    head = nullptr;
     length = 0;
 }
 
 LList::LList(int arr[], int size) {
     if(size <= 0) {
-        head = tail = current = nullptr;
+        head = nullptr;
         length = 0;
     }
     else {
         length = size;
-        head = current = tail = new Datum(arr[0]);
+        head = new Datum(arr[0]);
+        Datum *current = head;
         for(int i = 1; i < length; i++) {
-           Datum *temp = new Datum(arr[i]);
+            Datum *temp = new Datum(arr[i]);
             current->setNext(*temp);
-        current = tail = temp;
+            current = temp;
         }
     }
 }
@@ -31,11 +32,12 @@ LList::LList(const LList &rhs) {
         arr[i] = rhs[i];
     }
     
-    head = current = tail = new Datum(arr[0]);
+    head = new Datum(arr[0]);
+    Datum *current = head;
     for(int i = 1; i < length; i++) {
         Datum *temp = new Datum(arr[i]);
         current->setNext(*temp);
-        current = tail = temp; 
+        current = temp;
     }
 }
 
@@ -56,11 +58,12 @@ const LList LList::operator+(const LList &rhs) const {
     }
 
     
-    temp.head = temp.current = temp.tail = new Datum(arr[0]);
+    temp.head = new Datum(arr[0]);
+    Datum *current = temp.head;
     for(int i = 1; i < length; i++) {
         Datum *temp2 = new Datum(arr[i]);
         current->setNext(*temp2);
-        temp.current = temp.tail = temp2; 
+        current = temp2; 
     }
     return LList(arr, length+ rhs.size());
 }
@@ -73,17 +76,18 @@ const LList LList::operator=(const LList &rhs) {
         arr[i] = rhs[i];
     }
     
-    head = current = tail = new Datum(arr[0]);
+    head = new Datum(arr[0]);
+    Datum *current = head;
     for(int i = 1; i < length; i++) {
         Datum *temp = new Datum(arr[i]);
         current->setNext(*temp);
-        current = tail = temp; 
+        current = temp;
     }
     return LList(arr, length);
 }
 
 void LList::insert(int index, int value) {
-    current = head;
+    Datum *current = head;
     //inserting at head
     if(index <= 0) {
         Datum *ins = new Datum(value);
@@ -101,7 +105,6 @@ void LList::insert(int index, int value) {
         Datum *ins = new Datum(*(current));
         ins->setData(value); 
         current->setNext(*ins); 
-        tail = ins;
         length++;
         return;
     }
@@ -124,7 +127,7 @@ int LList::remove(int index) {
         return -1;
     }
     
-    current = head;
+    Datum *current = head;
     if(index >= length){
         index = length-1;
         for(int i = 0; i < index-1; i++) {
@@ -134,7 +137,6 @@ int LList::remove(int index) {
         int data = temp->getData();
         current->setNextNull();
         delete temp;
-        tail = current;
         length --;
         return data;
     }
@@ -184,7 +186,7 @@ int LList::operator[](int index) const {
         return head->getData();
     }
     else if(index >= length) {
-        return tail->getData();
+        index = length - 1;
     }
     
     Datum temp = *head;
@@ -206,10 +208,10 @@ int & LList::operator[](int index) {
         return head->getData();
     }
     else if(index >= length) {
-        return tail->getData();
+        index = length - 1;
     }
     
-    current = head;
+    Datum *current = head;
     for(int i = 0; i < index; i++) {
         current = current->getNext();
     }
@@ -247,21 +249,14 @@ void LList::clear() {
         return;
     }
     
+    Datum *current = head;
     while(head->getNext() != nullptr) {
         current = head;
         head = head->getNext();
         delete current;
     }
     
-    /*
-    if(head != nullptr) {
-        delete head;
-    }
-    */
-    if(tail != nullptr) {
-        delete tail;
-    }
-    
+    delete head;   
     length = 0;
     return;
 }

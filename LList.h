@@ -13,8 +13,6 @@ class LList {
 
     private:
         Datum *head;
-        Datum *tail;
-        Datum *current;
         int length;
 
     public:

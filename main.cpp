@@ -10,12 +10,19 @@ int main() {
     int test3[3] = {0,1,2};
 
     LList list;
+    cout << "list: " << list << endl;
     LList list0(test0, 0);
+    cout << "list 0: " << list0 << endl;
     LList list1(test1, 1);
+    cout << "list 1: " << list1 << endl;
     LList list2(test2, 2);
+    cout << "list 2: " << list2 << endl;
     LList list3(test3, 3);
+    cout << "list 3: " << list3 << endl;
     LList list4(list0);
+    cout << "list 4: " << list4 << endl;
     LList list5(list3);
+    cout << "list 5: " << list5 << endl;
 
     //checked by mia: works
     cout << "******** Testing << ********" << endl;
@@ -27,7 +34,7 @@ int main() {
     cout << "List4: " << list4 << endl;
     cout << "List5: " << list5 << endl;
     cout << endl;
-/*
+
     //tested by natalie: works
     cout << "******** Testing = ********" << endl;
     list4 = list2;
@@ -93,7 +100,7 @@ int main() {
     cout << "list45[0]: " << print << endl;
     cout << endl;
 */
-/*
+
     //checked by natalie: works"
     cout << "******** Testing indexOf ********" << endl;
     cout << "list9.indexOf(1): " << list9.indexOf(1) << endl;
@@ -129,9 +136,7 @@ int main() {
     cout << "list7.isEmpty(): " << list7.isEmpty() << endl;
     cout << "list.isEmpty(): " << list.isEmpty() << endl;
     cout << endl;
-*/
-    LList list9(list3);
-    LList list7(list3);
+
     //tested by mia: works but with a very large memory leak
     cout << "******** Testing clear ********" << endl;
     list9.clear();
@@ -184,9 +189,9 @@ int main() {
     list3.~LList();
     list4.~LList();
     list5.~LList();
-    //list6.~LList();
+    list6.~LList();
     list7.~LList();
-    //list8.~LList();
+    list8.~LList();
     list9.~LList();
     //list10.~LList();
     list11.~LList();
