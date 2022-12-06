@@ -176,8 +176,8 @@ bool LList::contains(int value) const {
 }
 
 int LList::operator[](int index) const {
-     if(head==nullptr){
-        //cout<<"empty";
+    if(head==nullptr){
+        cout<<"empty";
         return 0;
     }
     if(index < 0) {
@@ -187,12 +187,14 @@ int LList::operator[](int index) const {
         return tail->getData();
     }
     
-    Datum * temp = new Datum(*(head));
+    Datum temp = *head;
     for(int i = 0; i < index; i++) {
-        temp = temp->getNext();
+        temp = *(temp.getNext());
     }
-        
-    return temp->getData();
+    int value = temp.getData();
+
+    //delete temp;
+    return value;
 }
 
 int & LList::operator[](int index) {
@@ -220,13 +222,14 @@ int LList::indexOf(int value) const {
         //cout<<"empty";
         return -1;
     }
-    Datum * temp = new Datum(*(head));
-    for(int i = 0; i<length; i++){
-        if(temp->getData() == value){
+    Datum temp = *head;
+    for(int i = 0; i<length-1; i++){
+        if(temp.getData() == value){
             return i;
         }
-        temp = temp->getNext();
+        temp = *(temp.getNext());
     }
+    
     return -1;
 }
 

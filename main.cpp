@@ -31,9 +31,9 @@ int main() {
     //tested by natalie: works
     cout << "******** Testing = ********" << endl;
     list4 = list2;
-    list0 = list2 = list5;
+    list1 = list2 = list5;
     cout << "list4 = list2: " << list4 << endl; 
-    cout << "List0 = list2 = list5: " << list0 << endl;
+    cout << "List1 = list2 = list5: " << list1 << endl;
     cout << endl;
     // Reset
     list2 = list4;
