@@ -70,7 +70,7 @@ int main() {
     LList list9 = list2 + list3 + list1;
     cout << "List2 + list1 + list3: " << list9 << endl;
     cout << endl;
-/*
+
     //checked by mia: segmentation fault for empty arrays"
     cout << "******** Testing Right [] Indexing ********" << endl;
     int print = list9[3];
@@ -85,11 +85,15 @@ int main() {
     cout << "list9[list9.size()]: " << print << endl;
     print = list9[100];
     cout << "list9[100]: " << print << endl;
+/*    
+    print = list[3];
+    cout << "list[3]: " << print << endl;
     LList list45(test0, 0);
     print = list45[0];
     cout << "list45[0]: " << print << endl;
     cout << endl;
 */
+
     //checked by natalie: works"
     cout << "******** Testing indexOf ********" << endl;
     cout << "list9.indexOf(1): " << list9.indexOf(1) << endl;
@@ -140,23 +144,24 @@ int main() {
     cout << "list7.insert(0,10): " << list7 << endl;
     cout << endl;
     
-
-    //not tested
+    //tested by mia: seg fault when default constructor
     cout << "******** Testing >> ********" << endl;
+/*
     LList list10;
-    cout << "Input a number to append to list10:";
+    cout << "Input a number to append to list10: ";
     cin >> list10;
     cout << "10 >> list10: " << list10 << endl;
-    cout << "Input a number to append to list10:";
+    cout << "Input a number to append to list10: ";
     cin >> list10;
     cout << "11 >> list10: " << list10 << endl;
+*/
     LList list11(test3, 3);
-    cout << "Input a number to append to list11:";
+    cout << "Input a number to append to list11: ";
     cin >> list11;
     cout << "4 >> list11: " << list11 << endl;
     cout << endl;
-/*
-    //not tested
+
+    //tested by mia: works for everything but the default constructor
     cout << "******** Testing Left [] Indexing ********" << endl;
     list11[0] = 5;
     cout << "list11[0] = 5: " << list11 << endl;
@@ -165,12 +170,11 @@ int main() {
     list11[3] = 5;
     cout << "list11[3] = 5: " << list11 << endl;
     list11[list11.size()] = 10;
-    cout << "list11[list11.size()] = 5: " << list11 << endl;
+    cout << "list11[list11.size()] = 10: " << list11 << endl;
     list11[100] = 100;
-    cout << "list11[100] = 5: " << list11 << endl;
-    list[0] = 5;
-    cout << "list[0] = 5: " << list << endl;
-*/
+    cout << "list11[100] = 100: " << list11 << endl;
+    //list[0] = 5;
+    //cout << "list[0] = 5: " << list << endl;
     
     list.~LList();
     list1.~LList();
@@ -183,5 +187,5 @@ int main() {
     list8.~LList();
     list9.~LList();
     //list10.~LList();
-    //list11.~LList();
+    list11.~LList();
 }

@@ -283,8 +283,7 @@ ostream & operator<<(ostream &lhs, const LList &rhs) {
 }
 
 istream & operator>>(istream &lhs, LList &rhs) {
-    for(int i = 0; i < rhs.size(); i++) {
-        lhs >> rhs[i];
-    }
+    rhs.insert(rhs.size(), 0);
+    lhs >> rhs[rhs.size()];
     return lhs;
 }
