@@ -156,7 +156,7 @@ int LList::remove(int index) {
 }
 
 bool LList::contains(int value) const {
-    Datum * temp = head;
+    Datum * temp = new Datum(*head);
     for(int i = 0; i<length; i++){
         if(temp->getData() == value){
             return true;
@@ -167,8 +167,8 @@ bool LList::contains(int value) const {
 }
 
 int LList::operator[](int index) const {
-    if(length<=0 && head==nullptr){
-        cout<<"empty";
+     if(head==nullptr){
+        //cout<<"empty";
         return 0;
     }
     if(index < 0) {
