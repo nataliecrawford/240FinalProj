@@ -1,3 +1,13 @@
+/**
+ * @file LList.h
+ * @author natalie crawford, mia silver
+ * @brief 
+ * @version 0.1
+ * @date 2022-12-07
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef LLIST_H
 #define LLIST_H
 
